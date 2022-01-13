@@ -9,7 +9,7 @@ class Handler:
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver.get("https://play.typeracer.com")
         self.text = ""
-        self.wpm = 99
+        self.wpm = 500
         self.number_of_races = 0
 
     def race(self):
@@ -41,7 +41,7 @@ class Handler:
             text_elements[0] += " "
 
         self.text = "".join(text_elements)
-        self.text = self.text.split()
+        self.text = self.text.split(" ")
 
     def type_text(self):
         input_box = self.driver.find_element_by_xpath("//input[@autocorrect='off' and @autocapitalize='off']")
